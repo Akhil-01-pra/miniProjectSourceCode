@@ -1,97 +1,81 @@
-# Transaction Processing System  
-### Mini Project – 24UCS271 Lab
+# Bank Management System in C
 
----
+## Overview
+This project is a professional terminal-based Bank Management System built in C. It supports customer registration, secure login, deposit/withdrawal, money transfer, ATM services, cheque book requests, locker management, and admin operations.
 
-## Objective
-This mini project focuses on understanding, modifying, and extending a **Transaction Processing System** program. Students are expected to analyze existing code, improve it, and add new functionalities while following good coding practices.
+## Folder Structure
+- `main.c` - application entry point and menu flow
+- `account.c` - account registration and customer record management
+- `security.c` - password hashing, input masking, encrypted file handling, validation helpers
+- `transactions.c` - deposit, withdrawal, transfer, transaction logging, mini-statement
+- `atm.c` - ATM PIN management and ATM withdrawal simulation
+- `locker.c` - safe locker request, access, and admin locker report
+- `admin.c` - admin login and bank management operations
+- `bank.h` - shared structures, constants, and function prototypes
+- `customers.dat` - encrypted customer data storage (created at runtime)
+- `transactions.dat` - encrypted transaction log storage
+- `atm.dat` - encrypted ATM record storage
+- `lockers.dat` - encrypted locker record storage
+- `cheque_requests.dat` - encrypted cheque request storage
+- `admin_audit.log` - audit trail for admin and transaction actions
 
----
+## Features
+- Customer registration and account creation
+- Unique automatic account number generation
+- Secure username/password login with masking
+- Password hashing and encrypted file storage
+- Admin login with hidden credentials
+- Deposit, withdraw, transfer, balance enquiry
+- Mini statement and full transaction history
+- ATM PIN management, recovery, and ATM cash simulation
+- Cheque book request submission and admin approval
+- Locker application, allocation, and access authentication
+- Admin tools for account search, freeze/unfreeze, delete, and reports
+- Professional terminal UI with clear menus
 
-## Reference Code
-Review the given source code before starting the project:
+## Setup Instructions for VS Code
+1. Open this folder in VS Code.
+2. Ensure GCC is installed and available in your PATH.
+3. Open the integrated terminal.
+4. Compile the project using:
 
-🔗 https://replit.com/@ashokb/Unit5Programs#trans.c
+```powershell
+cd "c:\Users\KiTE\Saved Games\miniProjectSourceCode"
+gcc main.c account.c security.c transactions.c atm.c locker.c admin.c -o bank.exe
+```
 
----
+5. Run the program:
 
-## Tasks to be Performed
+```powershell
+./bank.exe
+```
 
-1. Compile and run the given executable code.
-2. Perform your own testing of the program.
-3. Add a new account detail and regenerate the `accounts.txt` file.
-   - Inspect the contents of the file.
-   - Verify whether the output matches your expectations.
-4. Identify and fix any logical errors in the program.
-5. Add new functionality  
-   - Example: Listing all account information.
-6. Optimize the program for better performance and efficiency.
+## Admin Login
+- Username: `admin`
+- Password: `Admin@123`
 
----
+## Notes
+- Data files are created automatically on first run.
+- Keep the generated `.dat` files in the executable directory for persistence.
+- The system uses modular C code with structures, functions, file handling, and validation.
 
-## Evaluation Criteria
+## Advanced Concepts Implemented
+- File encryption with XOR cipher
+- Password and PIN hashing
+- Session timeout logic
+- OTP simulation for PIN recovery
+- Audit log system
+- Secure input masking
+- Daily withdrawal limit enforcement
 
-### 1. General (25 Points)
-| Activity | Points | Remarks |
-|--------|--------|--------|
-| Self-effort | 5 | Student’s own assessment of hours spent (no copying or external references) |
-| Turnaround Time | 10 | Provide three time slots; earlier demo gets more points |
-| Project Demo | 10 | Demo must be done using repl.it |
+## Recommended Usage
+1. Register a customer account.
+2. Login as a customer to perform banking operations.
+3. Use ATM services and apply for cheque books or locker services.
+4. Login as admin to manage accounts, transactions, and requests.
 
----
+## Compilation Tips
+- Use GCC or MinGW on Windows.
+- If compile warnings appear, ensure `bank.h` is included in each module.
+- Run the executable from the same folder where the data files are stored.
 
-### 2. Comprehension (15 Points)
-| Activity | Points |
-|--------|--------|
-| Domain Knowledge | 5 |
-| Added Functionality (Ideas) | 5 |
-| Code Comprehension | 5 |
-
----
-
-### 3. Modification (35 Points)
-| Activity | Points |
-|--------|--------|
-| Code Improvement | 5 |
-| Functional Decomposition | 10 |
-| Refactoring for Memory Usage | 10 |
-| Refactoring for Speed | 10 |
-
----
-
-### 4. Innovation (45 Points)
-| Activity | Points |
-|--------|--------|
-| New Features / User Stories (Faculty specified) | 5 |
-| Requirement to Code Translation | 10 |
-| Added Functionality (Simple – Error Handling) | 10 |
-| Added Functionality (Advanced) | 20 |
-
----
-
-## Total Marks
-**120 Marks**  
-➡ Reduced to **20 Marks** for final evaluation
-
----
-
-## Rules for Mini Project Implementation
-
-- Maximum of **2 attempts** will be given for project presentation.
-- If dissatisfied with the first score, a second attempt is allowed.
-- The **best score** out of the two attempts will be considered final.
-- Discussion and clarification among students are allowed.
-- **Copying or borrowing code is strictly prohibited.**
-- Violation of plagiarism rules will result in a **zero (0 / NULL) score**.
-
----
-
-## Additional Reference
-🔗 http://j.mp/transactionUnit5  
-🔗 https://htmlpreview.github.io/?https://github.com/kgisl/makesite/blob/master/content/blog/2021-06-23-unit5-mini-project.md.html
-🔗 https://github.com/24UCS271-MiniProject/miniProjectSourceCode/
-
----
-
-**Date:** 31/01/2026  
-**Time:** 06:42
